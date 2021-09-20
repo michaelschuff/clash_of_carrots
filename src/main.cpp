@@ -15,8 +15,8 @@
 
 #include <COC.h>
 #include <Account/Account.h>
-#include <BotActionHandlers/OnReady.h>
-#include <BotActionHandlers/OnMessageCreate.h>
+#include <BotActions/OnReady.h>
+#include <BotActions/OnMessageCreate.h>
 
 
 int main()
@@ -28,7 +28,7 @@ int main()
     dpp::cluster bot(token);
 	
 	dpp::commandhandler command_handler(&bot);
-	command_handler.add_prefix("coc");
+	command_handler.add_prefix("Ω");
 	
 	bot.on_ready(coc::handle_on_ready(bot, command_handler));
 	bot.on_message_create(coc::handle_on_message_create(bot, command_handler));

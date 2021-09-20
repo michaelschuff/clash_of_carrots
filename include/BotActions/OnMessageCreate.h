@@ -15,13 +15,13 @@
 namespace coc
 {
 struct handle_on_message_create {
-	const dpp::cluster& bot;
-	const dpp::commandhandler& command_handler;
+	dpp::cluster& bot;
+	dpp::commandhandler& command_handler;
 	
-	handle_on_message_create(const dpp::cluster& _bot,
-							 const dpp::commandhandler& _command_handler);
+	handle_on_message_create(dpp::cluster& _bot,
+							 dpp::commandhandler& _command_handler);
 	
-	void operator()(const dpp::message_create_t& event) const;
+	void operator()(const dpp::message_create_t& event);
 };
 }
 
